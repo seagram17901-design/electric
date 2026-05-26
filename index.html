@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saksayam Taya</title>
+
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="icon" href="logo1.jpeg" >
+</head>
+
+<body>
+
+  <!-- Popup -->
+  <div class="modal" id="announcementModal">
+    <div class="modal-box">
+
+      <div class="modal-header">
+        <h2>ผู้พัฒนา</h2>
+
+        <button class="close-btn" onclick="closeModal()">
+          ×
+        </button>
+      </div>
+
+      <div class="modal-content">
+
+        <p>
+          สวัสดีครับ ผมนายศักดิ์สยาม ตายา เป็นผู้ที่ทำเว็บไซน์นี้ครับเนื่องจากผมพึ่งขึ้นปี 1  แล้วประสบปัญหากับการหาเว็บที่คำนวณค่าไฟแต่มันดูยากและยุ่งยากมากครับ เลยลองทำเว็บนี้ขึ้นมาเพื่อคำนวณคร่าวๆแต่ยึดพื้นฐานสูตรคำนวณค่าไฟตามจริงครับ หากมีเว็บที่คล้ายกันผมไม่ได้ตั้งใจที่จะแย้งผลงานนะครับ และหากอยากสนับสนุนผมสามารถสนับสนุนผ่านช่องทางนี้ได้เลยครับ
+        </p>
+
+        <div class="bank-box">
+
+          <div class="bank-image">
+            <img src="qr.jpeg" alt="QR" class="qr-image">
+          </div>
+
+          <div class="bank-info">
+            <p><strong>ธนาคาร :</strong> กสิกรไทย</p>
+            <p><strong>ชื่อบัญชี :</strong> ศักดิ์สยาม ตายา</p>
+            <p><strong>เลขบัญชี :</strong> 146-8-53608-7</p>
+            <p><strong>พร้อมเพย์ :</strong> 092-431-7528</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="container">
+
+    <div class="card">
+
+      <h1>ระบบคำนวณค่าไฟง่ายๆ</h1>
+      <p class="subtitle">
+        ระบบคำนวณค่าไฟรายวัน รายเดือน และรายปี
+      </p>
+
+      <div class="grid">
+
+        <div>
+          <label>ค่าไฟต่อหน่วย</label>
+          <input type="number" id="rate" value="8">
+        </div>
+
+        <div>
+          <label>ระยะเวลา</label>
+
+          <select id="period">
+            <option value="1">1 วัน</option>
+            <option value="30">1 เดือน</option>
+            <option value="180">6 เดือน</option>
+            <option value="365">1 ปี</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div id="devices"></div>
+
+      <div class="buttons">
+        <button class="add-btn" onclick="addDevice()">
+          + เพิ่มอุปกรณ์
+        </button>
+
+        <button class="calc-btn" onclick="calculate()">
+          คำนวณ
+        </button>
+
+        <button class="pdf-btn" onclick="window.print()">
+          Export PDF
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Result -->
+    <div class="card result-card" id="resultCard">
+
+      <h2>ผลลัพธ์</h2>
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>อุปกรณ์</th>
+            <th>วัตต์</th>
+            <th>ชม./วัน</th>
+            <th>หน่วย/วัน</th>
+            <th>บาท/วัน</th>
+            <th>รวม</th>
+          </tr>
+        </thead>
+
+        <tbody id="resultBody"></tbody>
+
+      </table>
+
+      <div class="total" id="grandTotal"></div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
